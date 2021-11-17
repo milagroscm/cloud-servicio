@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Code Editor Cloud</title>
-        <meta name="description" content="Online JavaScript Compiler">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
 
-    <body>
-        <div class="editor-menu">
-            <button class="btn btn-dark">Modo Oscuro</button>
-            <button class="btn btn-light">Modo Claro</button>
-            <button class="btn btn-run"><i class="fa fa-play"></i>Run </button>
-           
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="editor-styles.css">
+    <title>Code Editor</title>
+</head>
 
-        <div class="container">
-            <div class="left">
-                <div class="editor" contenteditable="" >
-                    Write your code ...
+<body>
+    <div class="editor">
+        <div class="editor__wrapper">
+            <div class="editor__body">
+                <div id="editorCode" class="editor__code"></div>
+            </div>
+            <div class="editor__footer">
+                <div class="editor__footer--left">
+                    <button class="editor__btn editor__run">Run ></button>
+                    <button class="editor__btn editor__reset">Reset ></button>
+                </div>
+                <div class="editor__footer--right">
+                    <div class="editor__console">
+                        <ul class="editor__console-logs"></ul>
+                    </div>
                 </div>
             </div>
-            <div class="bar" title="Click and Drag"></div>
-            <div class="rigth">
-                <iframe src="" frameborder="0" class="iframe"></iframe>
-
-            </div>
         </div>
+    </div>
+    <!-- Required Ace Libraries -->
+    <script src="js/ace-editor/src-min/ace.js"></script>
+    <script src="js/ace-editor/src-min/mode-python.js"></script>
+    <script src="js/ace-editor/src-min/ext-language_tools.js"></script>
 
-        <script src="script.js"></script>
-    </body>
+    <!-- Custom Scripts -->
+    <script src="js/editor.js"></script>
+    <script src="js/editor-console.js"></script>
+</body>
+
 </html>
