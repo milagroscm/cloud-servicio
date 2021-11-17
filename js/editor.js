@@ -5,7 +5,7 @@ const resetCodeBtn = document.querySelector('.editor__reset');
 
 // Setup Ace
 let codeEditor = ace.edit("editorCode");
-let defaultCode = 'Escribe tu codigo';
+let defaultCode = 'print("Hello World!")';
 let consoleMessages = [];
 
 let editorLib = {
@@ -31,14 +31,15 @@ let editorLib = {
         })
     },
     init() {
-        // Configurando Ace
+        // Configurar Ace
 
-        // tema
-        codeEditor.setTheme("ace/theme/dreamweaver");
+        // Theme
+        codeEditor.setTheme("ace/theme/github");
 
-        // seleccionar lenguaje
+        // Set language
         codeEditor.session.setMode("ace/mode/python");
 
+        // Set Options
         codeEditor.setOptions({
             fontFamily: 'Inconsolata',
             fontSize: '12pt',
@@ -46,27 +47,20 @@ let editorLib = {
             enableLiveAutocompletion: true,
         });
 
-        // codigo de inicio
+        // Set Default Code
         codeEditor.setValue(defaultCode);
     }
 }
 
 // Events
 executeCodeBtn.addEventListener('click', () => {
-    // Clear console messages
     editorLib.clearConsoleScreen();
-    
-    // Get input from the code editor
+
+    // Obtener el código que digitó el usuario
     const userCode = codeEditor.getValue();
 
-    // Run the user code
-    try {
-        new Function(userCode)();
-    } catch (err) {
-        console.error(err);
-    }
+    // Agregar la llamada al endpoint, enviando el "userCode"
 
-    // Print to the console
     editorLib.printToConsole();
 });
 
