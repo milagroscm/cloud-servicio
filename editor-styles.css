@@ -28,8 +28,8 @@ html, body {
 }
 
 .editor__wrapper {
-    width: 50%;
-    height: 70%;
+    width: 90%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     background: var(--editor-bg);
@@ -44,6 +44,8 @@ html, body {
 
 .editor__footer {
     display: flex;
+    height: 300px;
+
 }
 
 .editor__footer--left {
@@ -70,7 +72,7 @@ html, body {
 .editor__console {
     background-color: #fff;
     width: 100%;
-    height: 130px;
+    height: 250px;
     margin-top: .9em;
     border: 1px solid var(--editor-border);
     overflow: auto;
